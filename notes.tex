@@ -11,11 +11,25 @@
 \usepackage{titling}
 \usepackage{unicode-math}
 
+\newenvironment{tocpage}{
+   \onecolumn
+   \pagenumbering{roman}
+
+}{
+   \newpage
+   \twocolumn
+   \pagenumbering{arabic}
+}
+
 \newenvironment{chapter}[1]{
    \vspace{1cm}
+
    \begin{center}
       \LARGE \bfseries #1
    \end{center}
+
+   \addcontentsline{toc}{part}{#1}
+
 }{
    \setcounter{section}{0}
 }
@@ -45,6 +59,10 @@
 
    \vspace*{\fill}
 \end{titlepage}
+
+\begin{tocpage}
+   \tableofcontents
+\end{tocpage}
 
 \input{chapter/index.tex}
 
