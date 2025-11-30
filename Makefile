@@ -7,10 +7,12 @@ input  := $(name).tex
 alias  := $(name).pdf
 output := $(prefix)/$(alias)
 
+input += $(shell find chapter -name '*.tex')
+
 $(output):
 
 $(prefix):
 	mkdir -p $@
 
-$(output): $(prefix) $(input)
-	lualatex --output-directory=$(prefix) --jobname=$(name) $(input)
+$(output): $(input) $(prefix)
+	lualatex --output-directory=$(prefix) --jobname=$(name) $<

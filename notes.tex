@@ -11,6 +11,15 @@
 \usepackage{titling}
 \usepackage{unicode-math}
 
+\newenvironment{chapter}[1]{
+   \vspace{1cm}
+   \begin{center}
+      \LARGE \bfseries #1
+   \end{center}
+}{
+   \setcounter{section}{0}
+}
+
 \geometry{a3paper,twocolumn,vmargin={1cm,2cm},hmargin=1cm,columnsep=1cm}
 
 \setmainfont[Scale=1.05]{TeX Gyre Termes}
@@ -36,5 +45,7 @@
 
    \vspace*{\fill}
 \end{titlepage}
+
+\input{chapter/index.tex}
 
 \end{document}
