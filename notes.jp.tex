@@ -13,39 +13,6 @@
 \usepackage{titling}
 \usepackage{unicode-math}
 
-\newenvironment{tocpage}{
-   \onecolumn
-   \pagenumbering{roman}
-
-}{
-   \newpage
-   \twocolumn
-   \pagenumbering{arabic}
-}
-
-\newenvironment{chapter}[1]{
-   \vspace{1cm}
-
-   \begin{center}
-      \LARGE \bfseries #1
-   \end{center}
-
-   \addcontentsline{toc}{part}{#1}
-
-}{
-   \setcounter{section}{0}
-}
-
-\newenvironment{topic}[1]{
-   \vspace{\parskip}
-   \textbf{#1}
-
-}{}
-
-\NewDocumentCommand{\set}{o m}{
-   \left\{\, #2 \IfValueT{#1}{\,\mid\, #1} \,\right\}
-}
-
 \geometry{a3paper,twocolumn,vmargin={1cm,2cm},hmargin=1cm,columnsep=1cm}
 
 \setmainfont[Scale=1.05]{TeX Gyre Termes}
@@ -57,7 +24,6 @@
 \usetikzlibrary{graphs,graphdrawing}
 \usegdlibrary{force}
 
-\newtheorem{define}{定義}[section]
 \newtheorem{theorem}{定理}[section]
 \newtheorem{lemma}[theorem]{補題}
 \newtheorem{corollary}[theorem]{系}
@@ -67,7 +33,13 @@
 
 \renewcommand{\contentsname}{目次}
 
+\input{command.tex}
+\input{environment.tex}
+
 \begin{document}
+
+\setlength{\belowdisplayskip}{1pt}
+\setlength{\belowdisplayshortskip}{1pt}
 
 \begin{titlepage}
    \centering

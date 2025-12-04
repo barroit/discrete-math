@@ -1,0 +1,47 @@
+% SPDX-License-Identifier: MPL-2.0
+
+\newenvironment{tocpage}{
+   \onecolumn
+   \pagenumbering{roman}
+}{
+   \newpage
+   \twocolumn
+   \pagenumbering{arabic}
+}
+
+\newenvironment{chapter}[1]{
+   \vspace{1cm}
+
+   \begin{center}
+      \LARGE \bfseries #1
+   \end{center}
+
+   \addcontentsline{toc}{part}{#1}
+}{
+   \setcounter{section}{0}
+}
+
+\newenvironment{topic}[1]{
+   \vspace{\parskip}
+   \textbf{#1}
+   \list{}{\leftmargin=.5em}
+      \item\relax
+}{
+   \endlist
+}
+
+\newenvironment{formulatopic}[1]{
+   \vspace{\parskip}
+   \textbf{#1}
+   \[
+}{
+   \]
+   \endlist
+}
+
+\NewDocumentEnvironment{itemtopic}{o}{
+   \IfValueT{#1}{\textbf{#1}}
+   \list{}{\leftmargin=2em}
+}{
+   \endlist
+}

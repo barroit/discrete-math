@@ -1,0 +1,9 @@
+% SPDX-License-Identifier: MPL-2.0
+
+\NewDocumentCommand{\set}{o m}{
+   \left\{\, #2 \IfValueT{#1}{\,\mid\, #1} \,\right\}
+}
+
+\NewDocumentCommand{\defeq}{}{
+   \overset{\mathrm{def}}{=}
+}

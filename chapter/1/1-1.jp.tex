@@ -2,9 +2,7 @@
 
 \subsection{集合}
 
-\begin{define}
-   属するか否かが判定できる対象の集まり
-\end{define}
+集合は属するか否かが判定できる対象の集まり
 
 \begin{topic}{表し方}
    \begin{tabular}{ll}
@@ -36,33 +34,32 @@
    \end{tabular}
 \end{topic}
 
-\begin{topic}{部分集合}
-   \begin{description}
-      \item $A \subseteq B \iff \forall x \,(x \in A \Rightarrow x \in B)$
+\begin{formulatopic}{部分集合}
+   A \subseteq B \iff \forall x \,(x \in A \Rightarrow x \in B)
+\end{formulatopic}
 
-      \item $U \subseteq U$
+\begin{itemtopic}[部分集合の性質]
+   \item $U \subseteq U$
+   \item $\forall A \,(\varnothing \subseteq A)$
+   \item $A \subseteq B \land B \subseteq A \Rightarrow A = B$
+\end{itemtopic}
 
-      \item $\forall A \,(\varnothing \subseteq A)$
+\begin{formulatopic}{真部分集合}
+   A \subset B \iff A \subseteq B \land A \neq B
+\end{formulatopic}
 
-      \item $A \subseteq B \land B \subseteq A \Rightarrow A = B$
-   \end{description}
-\end{topic}
+\begin{itemtopic}[真部分集合の代表的な包含関係の例]
+   \item $\mathbb{N} \subset \mathbb{Z} \subset
+          \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$
+\end{itemtopic}
 
-\begin{topic}{真部分集合}
-   \begin{description}
-      \item $A \subset B \iff A \subseteq B \land A \neq B$
+\begin{formulatopic}{ベキ集合}
+   \mathcal{P}(A) = \set{X \mid X \subseteq A}
+\end{formulatopic}
 
-      \item $\mathbb{N} \subset \mathbb{Z} \subset
-             \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$
-   \end{description}
-\end{topic}
-
-\begin{topic}{ベキ集合}
-   \begin{description}
-      \item $\mathcal{P}(A) = \set{X \mid X \subseteq A}$
-      \item $\mathcal{P}(A) = 2^{A}$
-   \end{description}
-\end{topic}
+\begin{itemtopic}
+   \item 別記号　$2^A$
+\end{itemtopic}
 
 \begin{topic}{主な集合}
    \begin{tabular}{lll}
