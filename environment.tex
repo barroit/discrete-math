@@ -1,6 +1,6 @@
 % SPDX-License-Identifier: MPL-2.0
 
-\newenvironment{tocpage}{
+\NewDocumentEnvironment{tocpage}{}{
    \onecolumn
    \pagenumbering{roman}
 }{
@@ -9,7 +9,7 @@
    \pagenumbering{arabic}
 }
 
-\newenvironment{chapter}[1]{
+\NewDocumentEnvironment{chapter}{m}{
    \vspace{1cm}
 
    \begin{center}
@@ -21,27 +21,32 @@
    \setcounter{section}{0}
 }
 
-\newenvironment{topic}[1]{
+\NewDocumentEnvironment{topic}{o}{
    \vspace{\parskip}
-   \textbf{#1}
-   \list{}{\leftmargin=.5em}
+   \IfValueT{#1}{\textbf{#1}}
+   \list{}{\leftmargin=1em}
       \item\relax
 }{
    \endlist
 }
 
-\newenvironment{formulatopic}[1]{
+\NewDocumentEnvironment{formulatopic}{m}{
    \vspace{\parskip}
    \textbf{#1}
    \[
 }{
    \]
-   \endlist
 }
 
 \NewDocumentEnvironment{itemtopic}{o}{
    \IfValueT{#1}{\textbf{#1}}
-   \list{}{\leftmargin=2em}
+   \list{}{\leftmargin=1em}
 }{
    \endlist
+}
+
+\NewDocumentEnvironment{xtabular}{m}{
+   \hspace*{-\tabcolsep}\begin{tabular}{#1}
+}{
+   \end{tabular}
 }
