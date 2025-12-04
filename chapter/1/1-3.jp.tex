@@ -1,0 +1,49 @@
+% SPDX-License-Identifier: MPL-2.0
+
+\subsection{集合の演算}
+
+\begin{formulatopic}{$A$ と $B$ の和集合}
+   A \cup B \defas \set[x \in A \lor x \in B]{x}
+\end{formulatopic}
+
+\begin{formulatopic}{$A$ と $B$ の積集合}
+   A \cap B \defas \set[x \in A \land x \in B]{x}
+\end{formulatopic}
+
+\begin{formulatopic}{$A$ の補集合}
+   \overline{A} \defas U \setminus A
+\end{formulatopic}
+
+\begin{theorem}
+   \leavevmode
+
+   \begin{tabular}{ll}
+      ベキ等律 & $A \cup A = A$,　$A \cap A = A$                   \\
+      交換律   & $A \cup B = B \cup A$,　$A \cap B = B \cap A$     \\
+      結合律   & $(A \cup B) \cup C = A \cup (B \cup C)$           \\
+               & $(A \cap B) \cap C = A \cap (B \cap C)$           \\
+      分配律   & $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$  \\
+               & $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$  \\
+      収集律   & $A \cup (A \cap B) = A$,　$A \cap (A \cup B) = A$
+   \end{tabular}
+\end{theorem}
+
+\begin{theorem}
+   \leavevmode
+
+   \begin{tabular}{ll}
+      $A \cup \varnothing = A$      & $A \cap \varnothing = \varnothing$  \\
+      $A \cup U = U$                & $A \cap U = A$                      \\
+      $A \cup \overline{A} = U$     & $A \cap \overline{A} = \varnothing$ \\
+      $\overline{\overline{A}} = A$ &
+   \end{tabular}
+\end{theorem}
+
+\begin{theorem}
+   \leavevmode
+
+   \begin{tabular}{l}
+      $\overline{A \cup B} = \overline{A} \cap \overline{B}$ \\
+      $\overline{A \cap B} = \overline{A} \cup \overline{B}$
+   \end{tabular}
+\end{theorem}
